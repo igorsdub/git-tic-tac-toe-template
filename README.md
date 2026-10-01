@@ -43,15 +43,15 @@ Every turn follows these five steps in exact order. **Always pull before editing
 git pull origin main
 ```
 
-### 2. EDIT `board.md`
-Open `board.md` in your text editor. Replace **one** empty square (`[ ]`) with your mark (`[X]` or `[O]`), then save the file.
+### 2. EDIT `board.txt`
+Open `board.txt` in your text editor. Replace **one** empty square (`[ ]`) with your mark (`[X]` or `[O]`), then save the file.
 
 ### 3. STAGE your change
-Verify your diff and stage `board.md`:
+Verify your diff and stage `board.txt`:
 ```bash
 git status
 git diff
-git add board.md
+git add board.txt
 ```
 
 ### 4. COMMIT with a clear message
@@ -76,16 +76,16 @@ Tell your partner: **"Your turn!"**
   git push origin main
   ```
 
-- **Merge Conflict in `board.md`**:
-  Open `board.md`, resolve the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`), save, and run:
+- **Merge Conflict in `board.txt`**:
+  Open `board.txt`, resolve the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`), save, and run:
   ```bash
-  git add board.md
-  git commit -m "Resolve merge conflict in board.md"
+  git add board.txt
+  git commit -m "Resolve merge conflict in board.txt"
   git push origin main
   ```
 
 - **Mistake or Typo**:
-  Never force push (`git push -f`). Simply fix `board.md`, commit the fix, and push:
+  Never force push (`git push -f`). Simply fix `board.txt`, commit the fix, and push:
   ```bash
   git commit -am "Fix: correct square"
   git push origin main
@@ -109,7 +109,7 @@ Finished your match early? Play a rematch on a dedicated branch to keep your fir
    git checkout rematch
    ```
 
-3. Reset `board.md` back to empty squares (`[ ]`), commit, and push:
+3. Reset `board.txt` back to empty squares (`[ ]`), commit, and push:
    ```bash
    git commit -am "Start Rematch Game 2"
    git push origin rematch
