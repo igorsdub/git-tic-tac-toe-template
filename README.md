@@ -1,43 +1,46 @@
 # Git Tic-Tac-Toe Template
 
-A paired collaboration game. You and your partner play tic-tac-toe by editing, reviewing, committing, and sharing moves in a GitHub repository.
+You and a partner play tic-tac-toe in one shared GitHub repository. Each move is a small edit to the board, saved so your partner can review it.
 
 ![Git Tic-Tac-Toe Turn Cycle](images/workflow.svg)
 
-## Choose the shared pair repository
+## What you start with
 
-1. At the session, choose one participant's prepared public repository created from this template.
-2. Its owner invites the other partner as a collaborator.
-3. Each partner opens that same pair repository in a separate GitHub Codespace. Both people use the browser-based VS Code editor.
+This template ships with only the branch `main`.
 
-The repository's `main` branch is the clean starting point. It contains `BOARD.txt`, initialized with an empty 3×3 board made only of dots. Each row has three cells separated by one space. Do not play on or change `main`; play each match on its own branch.
+`main` is the clean reference board. It contains `BOARD.txt`, an empty 3×3 grid of dots. Each row has three cells separated by one space. A move replaces one `.` with `X` or `O`.
 
-## Start a match from `main`
+Leave `main` untouched. Play only on the `match` branch, so the empty board stays available as the reference.
 
-The template ships with `match-01` already created from the clean `main` branch. In your pair repository, fetch and check out `origin/match-01` if it is available. If it was not included when the repository was created, create `match-01` from `main` and publish it. For later matches, create a new branch from the clean `main` branch using the next two-digit number, such as `match-02`.
+## Start the shared game
 
-In VS Code, use the branch name in the lower-left status bar to select `main`, then choose **Create new branch**. Enter the next match name, such as `match-02`, and choose `main` as its starting point if prompted. Confirm that the status bar shows the match branch before editing. The first player publishes the branch using **Source Control → Publish Branch**. If the partner's Codespace was already open, first select **Source Control → Fetch** to refresh its branch list; then select `origin/match-01` (or the current match number), check it out, and pull before taking a turn.
+1. At the session, choose one person's public repository created from this template.
+2. The owner invites the other partner as a collaborator.
+3. On GitHub.com, before either person opens a Codespace, use the branch dropdown to create a branch named `match` from `main`.
+4. Each partner then opens that same repository in a separate Codespace, on `match`. Both people use the browser editor.
 
-For another match, select `main` again and create the next numbered branch from it. Do not create a rematch from a previous match branch, merge match branches into `main`, or reset the board by hand.
+Check the name in the lower-left corner. It must say `match` before you edit the board.
 
-## Play and share a move
+## Take a turn
 
-Both partners work on the same match branch in their own Codespaces. Take turns, and pull your partner's latest change before editing.
+Both partners work on `match`. Pull your partner's latest move before you edit.
 
 1. In **Source Control**, select **Pull**.
-2. Open `BOARD.txt`. Change one empty square to your mark (`X` or `O`), then save.
-3. Review the board's diff. Check that it contains only the legal move you intended.
-4. Stage `BOARD.txt` with the **+** control.
-5. Enter a clear commit message and select **Commit**.
-6. Select **Push** in Source Control. Tell your partner the move is ready.
-7. Your partner pulls, checks the board and commit, and takes the next turn.
+2. Open `BOARD.txt`. Change one `.` to your mark (`X` or `O`), then save.
+3. Look at the diff. It should show only that one mark.
+4. Stage `BOARD.txt` with the **+** button.
+5. Write a short commit message and select **Commit**.
+6. Select **Push**. Tell your partner the move is ready.
+7. Your partner pulls, checks the board, and takes the next turn.
 
-Saving, staging, committing, and pushing are separate actions. Both partners should take turns editing and reviewing changes.
+Saving, staging, committing, and pushing are separate steps. Take turns.
 
 ## Rehearse before the workshop
 
-For the advance setup check, create your own public repository from this template, open that new repository in your Codespace, select **Ask** in Copilot Chat, and ask exactly: “What does this repository do?” Readiness passes when the response correctly describes this shared tic-tac-toe repository and explains that moves are recorded in `BOARD.txt`. No board edit is required. Keep the repository and Codespace for the workshop. At the session, your pair chooses one prepared repository, invites the partner, and opens it in each person's separate Codespace.
+Create your own public repository from this template. Open it in a Codespace, select **Ask** in Copilot Chat, and ask: “What does this repository do?” You are ready when the answer describes this shared tic-tac-toe game and says moves go in `BOARD.txt`. Leave the board unchanged, and keep the repository for the workshop.
+
+At the session, follow **Start the shared game**: create `match` on GitHub.com before either person opens a Codespace.
 
 ## If you need help
 
-Ask your partner or facilitator to look at the board and Source Control with you.
+Ask your partner or the facilitator to look at the board and Source Control with you.
